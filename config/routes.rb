@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  root 'pages#main'
+  root 'pages#front'
+  get'about',to:'pages#about'
+  
 end
