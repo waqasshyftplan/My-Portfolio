@@ -1,0 +1,24 @@
+<h1>Article listing page  </h1>
+<table>
+ <thead>
+  <tr>
+   <th>title</th>
+   <th>discription</th>
+   <th>created</th>
+   <th>updated</th>
+  </tr>
+ </thead>
+ <tbody>
+  <tr>
+  <% @article.each do |article| %>
+   <td><%=article.title%></td>
+   <td><%=article.discription%></td>
+   <td><%=article.created_at%></td>
+   <td><%=article.updated_at%></td>
+   <td>edit</td>
+   <td> <%=button_to 'Delete',article_path(article), method: :delete%></td>
+  </tr>
+  <% end %>
+ </tbody>
+ 
+</table>
