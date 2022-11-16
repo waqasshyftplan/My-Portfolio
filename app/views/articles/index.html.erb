@@ -1,4 +1,6 @@
 <h1>Article listing page  </h1>
+<%= button_to 'main page ',root_path, method: :get%>
+<%= button_to 'new article',new_article_path, method: :get%>
 <table>
  <thead>
   <tr>
@@ -15,10 +17,11 @@
    <td><%=article.discription%></td>
    <td><%=article.created_at%></td>
    <td><%=article.updated_at%></td>
-   <td>edit</td>
-   <td> <%=button_to 'Delete',article_path(article), method: :delete%></td>
+   <td> <%=button_to 'view',article_path(article), method: :get%></td>
+   <td> <%=button_to 'edit',edit_article_path(article), method: :get%></td>
+   <td> <%=button_to 'Delete',article_path(article), method: :delete,onclick: "return confirm('Are you sure?')" %></td>
   </tr>
   <% end %>
+
  </tbody>
- 
 </table>
