@@ -7,7 +7,10 @@
    <th>title</th>
    <th>discription</th>
    <th>created</th>
-   <th>updated</th>
+   <th>Update at</th>
+   <th>customer name </th>
+   <th>customer id </th>
+
   </tr>
  </thead>
  <tbody>
@@ -17,6 +20,8 @@
    <td><%=article.discription%></td>
    <td><%=article.created_at%></td>
    <td><%=article.updated_at%></td>
+   <td><%=article.user.username%></td>
+   <td><%=article.user.id%></td>
    <td> <%=button_to 'view',article_path(article), method: :get%></td>
    <td> <%=button_to 'edit',edit_article_path(article), method: :get%></td>
    <td> <%=button_to 'Delete',article_path(article), method: :delete,onclick: "return confirm('Are you sure?')" %></td>
