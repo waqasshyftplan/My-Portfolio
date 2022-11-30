@@ -16,11 +16,14 @@ class ArticlesController < ApplicationController
  end 
  def create
     @article=Article.new(params.require(:article).permit(:title,:discription))
+    @article.user_id=User.first.id
     if
     @article.save
+    
     flash[:notice]="article saved"
     redirect_to @article
     else
+      
       render 'new'
     end 
   
